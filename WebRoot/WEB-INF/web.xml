@@ -1,16 +1,156 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
   <display-name>java_Web_King</display-name>
+  <context-param>
+  	<param-name>upload folder</param-name>
+  	<param-value>attachment</param-value>
+  </context-param>
+  
+  <context-param>
+  	<param-name>allowed file type</param-name>
+  	<param-value>.gif,.jpg,.bmp</param-value>
+  </context-param>
+
+  <env-entry>
+  	<env-entry-name>hello</env-entry-name>
+  	<env-entry-type>java.lang.String</env-entry-type>
+  	<env-entry-value>Hello, Welcome to the JavaEE Resource Injection.</env-entry-value>
+  </env-entry>
+  
+  <env-entry>
+  	<env-entry-name>i</env-entry-name>
+  	<env-entry-type>java.lang.Integer</env-entry-type>
+  	<env-entry-value>30</env-entry-value>
+  </env-entry>
+  
+  <env-entry>
+  	<env-entry-name>persons</env-entry-name>
+  	<env-entry-type>java.lang.String</env-entry-type>
+  	<env-entry-value>Helloween, Cobain</env-entry-value>
+  </env-entry>
+ 
+
+
+
   <servlet>
     <description>This is the description of my J2EE component</description>
     <display-name>This is the display name of my J2EE component</display-name>
     <servlet-name>HelloServlet</servlet-name>
     <servlet-class>com.jackson.firstweb.HelloServlet</servlet-class>
   </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>FirstServlet</servlet-name>
+    <servlet-class>com.jackson.firstweb.FirstServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>RequestServlet</servlet-name>
+    <servlet-class>com.jackson.firstweb.RequestServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>IdentityServlet</servlet-name>
+    <servlet-class>com.jackson.firstweb.IdentityServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>InitParamServlet</servlet-name>
+    <servlet-class>com.jackson.firstweb.InitParamServlet</servlet-class>
+    <init-param>
+    	<param-name>helloween</param-name>
+    	<param-value>password</param-value>
+    </init-param>
+    <init-param>
+    	<param-name>admin</param-name>
+    	<param-value>admin</param-value>
+    </init-param>
+    <init-param>
+    	<param-name>babyface</param-name>
+    	<param-value>babyface</param-value>
+    </init-param>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ContextParamServlet</servlet-name>
+    <servlet-class>com.jackson.firstweb.ContextParamServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>InjectionServlet</servlet-name>
+    <servlet-class>com.jackson.firstweb.InjectionServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SearchServlet</servlet-name>
+    <servlet-class>com.jackson.firstweb.SearchServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>PostServlet</servlet-name>
+    <servlet-class>com.jackson.firstweb.PostServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UploadServlet</servlet-name>
+    <servlet-class>com.jackson.firstweb.UploadServlet</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
 
   <servlet-mapping>
     <servlet-name>HelloServlet</servlet-name>
     <url-pattern>/HelloServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>FirstServlet</servlet-name>
+    <url-pattern>/FirstServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RequestServlet</servlet-name>
+    <url-pattern>/RequestServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>IdentityServlet</servlet-name>
+    <url-pattern>/IdentityServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>InitParamServlet</servlet-name>
+    <url-pattern>/InitParamServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ContextParamServlet</servlet-name>
+    <url-pattern>/ContextParamServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>InjectionServlet</servlet-name>
+    <url-pattern>/InjectionServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SearchServlet</servlet-name>
+    <url-pattern>/SearchServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PostServlet</servlet-name>
+    <url-pattern>/PostServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UploadServlet</servlet-name>
+    <url-pattern>/UploadServlet</url-pattern>
   </servlet-mapping>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
