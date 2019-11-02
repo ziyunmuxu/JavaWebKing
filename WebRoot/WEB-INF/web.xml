@@ -2,36 +2,28 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
   <display-name>java_Web_King</display-name>
   <context-param>
-  	<param-name>upload folder</param-name>
-  	<param-value>attachment</param-value>
+    <param-name>upload folder</param-name>
+    <param-value>attachment</param-value>
   </context-param>
-  
   <context-param>
-  	<param-name>allowed file type</param-name>
-  	<param-value>.gif,.jpg,.bmp</param-value>
+    <param-name>allowed file type</param-name>
+    <param-value>.gif,.jpg,.bmp</param-value>
   </context-param>
-
   <env-entry>
-  	<env-entry-name>hello</env-entry-name>
-  	<env-entry-type>java.lang.String</env-entry-type>
-  	<env-entry-value>Hello, Welcome to the JavaEE Resource Injection.</env-entry-value>
+    <env-entry-name>hello</env-entry-name>
+    <env-entry-type>java.lang.String</env-entry-type>
+    <env-entry-value>Hello, Welcome to the JavaEE Resource Injection.</env-entry-value>
   </env-entry>
-  
   <env-entry>
-  	<env-entry-name>i</env-entry-name>
-  	<env-entry-type>java.lang.Integer</env-entry-type>
-  	<env-entry-value>30</env-entry-value>
+    <env-entry-name>i</env-entry-name>
+    <env-entry-type>java.lang.Integer</env-entry-type>
+    <env-entry-value>30</env-entry-value>
   </env-entry>
-  
   <env-entry>
-  	<env-entry-name>persons</env-entry-name>
-  	<env-entry-type>java.lang.String</env-entry-type>
-  	<env-entry-value>Helloween, Cobain</env-entry-value>
+    <env-entry-name>persons</env-entry-name>
+    <env-entry-type>java.lang.String</env-entry-type>
+    <env-entry-value>Helloween, Cobain</env-entry-value>
   </env-entry>
- 
-
-
-
   <servlet>
     <description>This is the description of my J2EE component</description>
     <display-name>This is the display name of my J2EE component</display-name>
@@ -62,16 +54,16 @@
     <servlet-name>InitParamServlet</servlet-name>
     <servlet-class>com.jackson.firstweb.InitParamServlet</servlet-class>
     <init-param>
-    	<param-name>helloween</param-name>
-    	<param-value>password</param-value>
+      <param-name>helloween</param-name>
+      <param-value>password</param-value>
     </init-param>
     <init-param>
-    	<param-name>admin</param-name>
-    	<param-value>admin</param-value>
+      <param-name>admin</param-name>
+      <param-value>admin</param-value>
     </init-param>
     <init-param>
-    	<param-name>babyface</param-name>
-    	<param-value>babyface</param-value>
+      <param-name>babyface</param-name>
+      <param-value>babyface</param-value>
     </init-param>
   </servlet>
   <servlet>
@@ -104,12 +96,28 @@
     <servlet-name>UploadServlet</servlet-name>
     <servlet-class>com.jackson.firstweb.UploadServlet</servlet-class>
   </servlet>
-
-
-
-
-
-
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>LifeCycleServlet</servlet-name>
+    <servlet-class>com.jackson.firstweb.LifeCycleServlet</servlet-class>
+    <init-param>
+      <param-name>startPoint</param-name>
+      <param-value>1600</param-value>
+    </init-param>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ForwardServlet</servlet-name>
+    <servlet-class>com.jackson.firstweb.ForwardServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>RedirectServlet</servlet-name>
+    <servlet-class>com.jackson.firstweb.RedirectServlet</servlet-class>
+  </servlet>
 
 
   <servlet-mapping>
@@ -151,6 +159,18 @@
   <servlet-mapping>
     <servlet-name>UploadServlet</servlet-name>
     <url-pattern>/UploadServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LifeCycleServlet</servlet-name>
+    <url-pattern>/LifeCycleServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ForwardServlet</servlet-name>
+    <url-pattern>/ForwardServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RedirectServlet</servlet-name>
+    <url-pattern>/RedirectServlet</url-pattern>
   </servlet-mapping>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
