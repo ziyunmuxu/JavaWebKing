@@ -1,12 +1,32 @@
-<%@ page language="java" pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean"%> 
-<%@ taglib uri="http://struts.apache.org/tags-html" prefix="html"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" %>
+<%@ taglib uri="http://jakarta.apache.org/struts/tags-bean" prefix="bean"%> 
+<%@ taglib uri="http://jakarta.apache.org/struts/tags-html" prefix="html"%>
  
 <html> 
 	<head>
 		<title>JSP for HelloForm form</title>
+		<style type="text/css">body {font-size: 12px; }</style>
 	</head>
 	<body>
-		Hello, ${ helloForm.name }. Welcome to Struts world.
+	
+		您好，${ helloForm.name }.  <br/><br/>
+		
+		您的年龄是：${ helloForm.age },  <br/>
+		
+		<c:choose>
+			<c:when test="${ helloForm.experience }">您以前用过 Struts。</c:when>
+			<c:otherwise>您以前没有用过 Struts。</c:otherwise>
+		</c:choose>
+		
+		<br/>
+		
+		您的爱好是：
+		<c:forEach items="${ helloForm.hobby }" var="hobby">
+			${ hobby }, 
+		</c:forEach> <br/>
+		日期：${ helloForm.date } <br/>
+		时间：${ helloForm.time } <br/>
+
 	</body>
 </html>
+

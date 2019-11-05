@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionMapping;
+import org.apache.struts.action.ActionMessage;
 
 /** 
  * MyEclipse Struts
@@ -17,51 +18,66 @@ import org.apache.struts.action.ActionMapping;
  * @struts.form name="helloForm"
  */
 public class HelloForm extends ActionForm {
-	/*
-	 * Generated fields
+	/**
+	 * 
 	 */
-
-	/** name property */
+	private static final long serialVersionUID = 1L;
 	private String name;
+	private String[] hobby;
+	private int age;
+	private boolean experience;
 
-	/*
-	 * Generated Methods
-	 */
 
-	/** 
-	 * Method validate
-	 * @param mapping
-	 * @param request
-	 * @return ActionErrors
-	 */
 	public ActionErrors validate(ActionMapping mapping,
 			HttpServletRequest request) {
-		// TODO Auto-generated method stub
-		return null;
+
+		ActionErrors errors = new ActionErrors();
+
+		if (name == null || name.trim().length() == 0)
+			errors.add("name", new ActionMessage("hello.error.name"));
+
+		if (hobby == null || hobby.length < 1)
+			errors.add("hobby", new ActionMessage("hello.error.hobby"));
+
+		if (age < 5)
+			errors.add("age", new ActionMessage("hello.error.age", 5));
+
+		return errors;
 	}
 
-	/** 
-	 * Method reset
-	 * @param mapping
-	 * @param request
-	 */
 	public void reset(ActionMapping mapping, HttpServletRequest request) {
-		// TODO Auto-generated method stub
+		age = 5;
 	}
 
-	/** 
-	 * Returns the name.
-	 * @return String
-	 */
 	public String getName() {
 		return name;
 	}
 
-	/** 
-	 * Set the success.
-	 * @param name The name to set
-	 */
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public boolean isExperience() {
+		return experience;
+	}
+
+	public void setExperience(boolean experience) {
+		this.experience = experience;
+	}
+
+	public String[] getHobby() {
+		return hobby;
+	}
+
+	public void setHobby(String[] hobby) {
+		this.hobby = hobby;
 	}
 }
